@@ -44,4 +44,4 @@ __pycache__/
 *.pyc
 демо-отчёты/
 *.xlsx
-!примеры/*.xlsx
+!examples/*.xlsx

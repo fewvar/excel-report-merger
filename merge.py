@@ -281,9 +281,11 @@ def main() -> int:
     try:
         files_count, rows_count = merge(args.folder, args.out, args.sheet, args.recursive)
     except MergeError as error:
+        sys.stdout.flush()  # иначе в пайпе ошибка обгонит прогресс
         print(f"\nОшибка: {error}", file=sys.stderr)
         return 1
     except KeyboardInterrupt:
+        sys.stdout.flush()
         print("\nПрервано пользователем", file=sys.stderr)
         return 130
 
